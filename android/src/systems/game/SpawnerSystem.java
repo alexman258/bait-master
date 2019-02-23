@@ -1,15 +1,14 @@
 package systems.game;
 
-
 import Interface.ISystem;
 
-public class RenderSystem implements ISystem {
+public class SpawnerSystem implements ISystem {
     private int id;
     private String type;
 
-    public RenderSystem(int id){
-        this.id = id;
-        type = "RenderSystem";
+    public SpawnerSystem(int id){
+        this.id =id;
+        type = "SpawnerSystem";
     }
 
     @Override
@@ -21,4 +20,5 @@ public class RenderSystem implements ISystem {
     @Override
     public void update(){}
 
+    private void spawnFish(){}
 }
