@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import Interface.IEntity;
 import Interface.ISystem;
-import components.IComponent;
+import Interface.IComponent;
 
 public class Engine {
     private static Engine engine;

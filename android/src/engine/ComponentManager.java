@@ -2,7 +2,7 @@ package engine;
 
 import java.util.HashMap;
 
-import components.IComponent;
+import Interface.IComponent;
 
 public class ComponentManager {
 

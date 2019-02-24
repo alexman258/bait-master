@@ -2,6 +2,8 @@ package components;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import Interface.IComponent;
+
 public class RenderComponent implements IComponent {
 
     private int id;

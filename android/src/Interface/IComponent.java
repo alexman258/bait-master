@@ -1,4 +1,4 @@
-package components;
+package Interface;
 
 public interface IComponent {
     public int getID();

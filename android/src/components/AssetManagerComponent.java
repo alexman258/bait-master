@@ -2,6 +2,8 @@ package components;
 
 import android.content.res.AssetManager;
 
+import Interface.IComponent;
+
 public class AssetManagerComponent implements IComponent {
 
     private int id;

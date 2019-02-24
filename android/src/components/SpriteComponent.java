@@ -2,6 +2,8 @@ package components;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 
+import Interface.IComponent;
+
 public class SpriteComponent implements IComponent {
 
     private int id;

@@ -1,5 +1,7 @@
 package components;
 
+import Interface.IComponent;
+
 public class GameTimeComponent implements IComponent {
 
     private int id;
