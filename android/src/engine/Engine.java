@@ -21,7 +21,7 @@ public class Engine {
         flaggedForRemoval = new ArrayList<Integer>();
     }
 
-    private Engine getInstance(String[] systemUpdateOrder) {
+    public static Engine getInstance(String[] systemUpdateOrder) {
         if (null == engine) {
             engine = new Engine(systemUpdateOrder);
         }
