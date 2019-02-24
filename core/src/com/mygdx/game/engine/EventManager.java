@@ -1,10 +1,10 @@
-package engine;
+package com.mygdx.game.engine;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import Interface.IEvent;
-import Interface.IEventListener;
+import com.mygdx.game.Interface.IEvent;
+import com.mygdx.game.Interface.IEventListener;
 
 public class EventManager {
 

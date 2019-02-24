@@ -1,4 +1,4 @@
-package com.mygdx.game.utils;
+package com.mygdx.game.engine.utils;
 
 public class SystemUpdateOrder {
 

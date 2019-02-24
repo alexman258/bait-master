@@ -7,13 +7,11 @@ import java.util.ArrayList;
 import com.mygdx.game.Interface.IComponent;
 import com.mygdx.game.Interface.IEntity;
 import com.mygdx.game.Interface.ISystem;
-import com.mygdx.game.components.SizeComponent;
-import com.mygdx.game.components.SpriteComponent;
 import com.mygdx.game.engine.Engine;
 import com.mygdx.game.entities.Fish;
 import com.mygdx.game.systems.MovementSystem;
-import com.mygdx.game.utils.SystemUpdateOrder;
-import com.mygdx.game.utils.data.FishData;
+import com.mygdx.game.engine.utils.SystemUpdateOrder;
+import com.mygdx.game.engine.utils.data.FishData;
 
 public class FishFactory {
     private static Engine engine = Engine.getInstance(SystemUpdateOrder.getSystemUpdateOrder());

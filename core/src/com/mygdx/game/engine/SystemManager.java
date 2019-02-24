@@ -1,10 +1,10 @@
-package engine;
+package com.mygdx.game.engine;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import Interface.ISystem;
+import com.mygdx.game.Interface.ISystem;
 
 public class SystemManager {
 

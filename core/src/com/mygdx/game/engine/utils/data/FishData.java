@@ -1,4 +1,4 @@
-package com.mygdx.game.utils.data;
+package com.mygdx.game.engine.utils.data;
 
 public class FishData {
     public double direction;
