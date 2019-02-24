@@ -5,6 +5,7 @@ import com.mygdx.game.components.PositionComponent;
 import com.mygdx.game.components.SizeComponent;
 import com.mygdx.game.components.SpriteComponent;
 import com.mygdx.game.engine.ComponentManager;
+import com.mygdx.game.engine.utils.data.Screen;
 
 public class UpdateSpriteSystem implements ISystem {
     private int id;
@@ -30,11 +31,13 @@ public class UpdateSpriteSystem implements ISystem {
     @Override
     public void update() {
         SpriteComponent spriteComponent=(SpriteComponent)componentManager.getComponent(id, "SpriteComponent");
-        PositionComponent locationComponent=(PositionComponent) componentManager.getComponent(id, "PositionComponent");
-        SizeComponent sizeComponent=(SizeComponent)componentManager.getComponent(id, "SizeComponent");
+        PositionComponent positionComponent =(PositionComponent) componentManager.getComponent(id, "PositionComponent");
+        //SizeComponent sizeComponent=(SizeComponent)componentManager.getComponent(id, "SizeComponent");
 
-        spriteComponent.getSprite().setCenter((float)locationComponent.getX(),(float)locationComponent.getY());
-        spriteComponent.getSprite().setSize((float)sizeComponent.getWidth(), (float)sizeComponent.getHeight());
+        float x = (float) positionComponent.getX();
+        float y = (float) positionComponent.getY();
 
+        spriteComponent.getSprite().setCenter(x, y);
+        //spriteComponent.getSprite().setSize((float)sizeComponent.getWidth(), (float)sizeComponent.getHeight());
     }
 }

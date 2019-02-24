@@ -17,6 +17,8 @@ import com.mygdx.game.engine.Engine;
 import com.mygdx.game.engine.utils.EntityRenderOrder;
 import com.mygdx.game.engine.utils.SystemUpdateOrder;
 import com.mygdx.game.entities.Fish;
+import com.mygdx.game.systems.UpdateSpriteSystem;
+import com.mygdx.game.systems.game.InputSystem;
 import com.mygdx.game.systems.game.RenderSystem;
 
 
@@ -24,6 +26,7 @@ import java.awt.Image;
 import java.util.ArrayList;
 
 public class MyGdxGame extends ApplicationAdapter {
+
 	private SpriteBatch batch;
 	private AssetManager assetManager;
 	private Engine engine;
@@ -57,10 +60,12 @@ public class MyGdxGame extends ApplicationAdapter {
 		ArrayList<IComponent> cl = new ArrayList<IComponent>();
 		ArrayList<ISystem> sl = new ArrayList<ISystem>();
 
-		cl.add(new PositionComponent(fisha.getID(), 0,0));
+		cl.add(new PositionComponent(fisha.getID(), 500,1080));
 		cl.add(new RenderComponent(fisha.getID(), batch, EntityRenderOrder.getEntityRenderOrder()));
 		cl.add(new SpriteComponent(fisha.getID(), new Sprite(new Texture("fisha.png"))));
 		sl.add(new RenderSystem(fisha.getID()));
+		sl.add(new UpdateSpriteSystem(fisha.getID()));
+		sl.add(new InputSystem(fisha.getID()));
 
 		engine.addEntity(fisha, cl, sl);
 	}
