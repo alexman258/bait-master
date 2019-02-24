@@ -6,7 +6,7 @@ import components.IComponent;
 
 public class ComponentManager {
 
-    private ComponentManager componentManager;
+    private static ComponentManager componentManager;
     private HashMap<String, IComponent> componentTypes;
     private HashMap<Integer, IComponent> componentIds;
 
@@ -15,7 +15,7 @@ public class ComponentManager {
         componentIds = new HashMap<Integer, IComponent>();
     }
 
-    public ComponentManager getInstance() {
+    public static ComponentManager getInstance() {
         if(componentManager == null) {
             return new ComponentManager();
         }
