@@ -1,6 +1,7 @@
 package com.mygdx.game.systems.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Vector3;
 import com.mygdx.game.Interface.ISystem;
 import com.mygdx.game.engine.ComponentManager;
 import com.mygdx.game.engine.EntityManager;
@@ -11,6 +12,7 @@ public class InputSystem implements ISystem {
     private String type;
     private ComponentManager componentManager;
     private EntityManager entityManager;
+    private Vector3 touchCoordinates;
 
     public InputSystem(int id) {
         this.id = id;
@@ -35,6 +37,6 @@ public class InputSystem implements ISystem {
     }
 
     private void spawnFish() {
-        //double x = Gdx.input.
+
     }
 }

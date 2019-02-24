@@ -81,10 +81,12 @@ public class Engine {
 
     public void update(){
 
+
         for(String sType : systemUpdateOrder){
             for(Map.Entry<Integer, ISystem> map : sm.getSystemEntries(sType)) {
                 map.getValue().update();
             }
         }
+
     }
 }
