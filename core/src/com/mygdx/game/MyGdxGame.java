@@ -75,7 +75,7 @@ public class MyGdxGame extends ApplicationAdapter {
 
 	private void initEntities() {
 		if(engine != null) {
-			GameEntityFactory gameEntityFactory = new GameEntityFactory(assetManager, batch, SpecialEntityID.GAME_ENTITY);
+			GameEntityFactory gameEntityFactory = new GameEntityFactory(assetManager, batch, SpecialEntityID.BACKGROUND_ENTITY);
 			gameEntityFactory.buildComponentList();
 			gameEntityFactory.buildSystemList();
 			gameEntityFactory.buildEntity();

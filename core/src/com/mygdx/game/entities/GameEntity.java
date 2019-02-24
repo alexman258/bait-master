@@ -9,7 +9,7 @@ public class GameEntity implements IEntity {
 
     public GameEntity(int id){
         this.id = id;
-        type = "GameEntity";
+        type = "Shore";
     }
 
     @Override

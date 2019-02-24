@@ -37,7 +37,7 @@ public class GameEntityFactory extends AbstractEntityFactory {
 
     @Override
     public void buildEntity() {
-        entity = new GameEntity(SpecialEntityID.GAME_ENTITY);
+        entity = new GameEntity(SpecialEntityID.BACKGROUND_ENTITY);
     }
 
     @Override
