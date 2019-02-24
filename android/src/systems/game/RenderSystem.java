@@ -57,8 +57,8 @@ public class RenderSystem implements ISystem {
                 }
             }
         }
-        batch.end();
 
+        batch.end();
     }
 
 }
