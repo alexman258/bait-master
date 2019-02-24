@@ -19,7 +19,7 @@ public class SystemManager {
 
     public static SystemManager getInstance() {
         if(systemManager == null) {
-            return new SystemManager();
+            systemManager = new SystemManager();
         }
 
         return systemManager;

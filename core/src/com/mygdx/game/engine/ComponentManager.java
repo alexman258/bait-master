@@ -18,7 +18,8 @@ public class ComponentManager {
 
     public static ComponentManager getInstance() {
         if(componentManager == null) {
-            return new ComponentManager();
+
+            componentManager = new ComponentManager();
         }
 
         return componentManager;
