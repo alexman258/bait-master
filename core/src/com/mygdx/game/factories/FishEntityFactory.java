@@ -12,7 +12,7 @@ import com.mygdx.game.systems.MovementSystem;
 import com.mygdx.game.engine.utils.SystemUpdateOrder;
 import com.mygdx.game.engine.utils.data.FishData;
 
-public class FishFactory {
+public class FishEntityFactory {
     private static Engine engine = Engine.getInstance(SystemUpdateOrder.getSystemUpdateOrder());
     private static ArrayList<IComponent> cl = new ArrayList<IComponent>();
     private static ArrayList<ISystem> sl = new ArrayList<ISystem>();

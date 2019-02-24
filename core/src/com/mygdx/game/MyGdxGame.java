@@ -22,7 +22,7 @@ public class MyGdxGame extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		assetManager = new AssetManager();
-		image = new Texture("fisha.png");
+		loadAssets();
 
 	}
 
