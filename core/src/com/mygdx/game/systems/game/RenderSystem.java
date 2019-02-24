@@ -37,7 +37,7 @@ public class RenderSystem implements ISystem {
 
     @Override
     public void update(){
-        RenderComponent renderComponent = (RenderComponent) componentManager.getComponent("RenderComponent");
+        RenderComponent renderComponent = (RenderComponent) componentManager.getComponent(id, "RenderComponent");
 
         SpriteBatch batch = renderComponent.getSpriteBatch();
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -50,7 +50,7 @@ public class RenderSystem implements ISystem {
                 Set<Map.Entry<Integer,IEntity>> entities = entityMap.entrySet();
                 for(Map.Entry<Integer,IEntity> e : entities) {
                     int id = e.getValue().getID();
-                    SpriteComponent sp = (SpriteComponent)componentManager.getComponent(id);
+                    SpriteComponent sp = (SpriteComponent)componentManager.getComponent(id, "SpriteComponent");
                     if(sp.isVisible()) {
                         sp.getSprite().draw(batch);
                     }
