@@ -22,7 +22,8 @@ public class MyGdxGame extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		assetManager = new AssetManager();
-		image = new Texture("shore.png");
+		image = new Texture("fisha.png");
+
 	}
 
 	@Override
@@ -30,7 +31,7 @@ public class MyGdxGame extends ApplicationAdapter {
 		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
-		batch.draw(image,0,0);
+		batch.draw(image,600,600);
 		batch.end();
 	}
 	
@@ -43,6 +44,6 @@ public class MyGdxGame extends ApplicationAdapter {
 	private void loadAssets() {
 
 		assetManager.load("shore.png", Texture.class);
-		//assetManager.load(fisha.png, Texture.class)
+		assetManager.load("fisha.png", Texture.class);
 	}
 }

@@ -1,9 +1,8 @@
 package com.mygdx.game.factories;
 
-import android.content.res.AssetManager;
-
 import java.util.ArrayList;
 
+import com.badlogic.gdx.assets.AssetManager;
 import com.mygdx.game.Interface.IComponent;
 import com.mygdx.game.Interface.IEntity;
 import com.mygdx.game.Interface.ISystem;
@@ -15,8 +14,8 @@ import com.mygdx.game.engine.utils.data.FishData;
 
 public class FishFactory {
     private static Engine engine = Engine.getInstance(SystemUpdateOrder.getSystemUpdateOrder());
-    private static ArrayList<IComponent> cl = new ArrayList<>();
-    private static ArrayList<ISystem> sl = new ArrayList<>();
+    private static ArrayList<IComponent> cl = new ArrayList<IComponent>();
+    private static ArrayList<ISystem> sl = new ArrayList<ISystem>();
 
     public static void create(AssetManager assetManager, FishData fishdata){
         int id = engine.acquireEntityID();

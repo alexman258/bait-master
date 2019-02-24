@@ -1,7 +1,8 @@
 package com.mygdx.game.components;
 
-import android.content.res.AssetManager;
 
+
+import com.badlogic.gdx.assets.AssetManager;
 import com.mygdx.game.Interface.IComponent;
 
 public class AssetManagerComponent implements IComponent {
