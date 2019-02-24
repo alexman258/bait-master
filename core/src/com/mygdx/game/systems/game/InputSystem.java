@@ -35,6 +35,6 @@ public class InputSystem implements ISystem {
     }
 
     private void spawnFish() {
-        double x = Gdx.input.
+        //double x = Gdx.input.
     }
 }
