@@ -2,7 +2,9 @@ package com.mygdx.game.engine;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Set;
 
+import com.mygdx.game.Interface.AbstractEntityFactory;
 import com.mygdx.game.Interface.IEntity;
 import com.mygdx.game.Interface.ISystem;
 import com.mygdx.game.Interface.IComponent;
@@ -58,8 +60,23 @@ public class Engine {
         return em.acquireEntityId();
     }
 
+    public void addEntity(AbstractEntityFactory entityFactory) {
+        em.addEntity(entityFactory.getEntity());
+
+        if(entityFactory != null) {
+            for(IComponent component : entityFactory.getComponentList()) {
+                cm.addComponent(component);
+            }
+
+            for(ISystem system : entityFactory.getSystemList()) {
+                sm.addSystem(system);
+            }
+        }
+    }
+
     public void addEntity(IEntity e, ArrayList<IComponent> cl, ArrayList<ISystem> sl){
         em.addEntity(e);
+
         for(IComponent c : cl){
             cm.addComponent(c);
         }
@@ -83,10 +100,14 @@ public class Engine {
 
 
         for(String sType : systemUpdateOrder){
-            for(Map.Entry<Integer, ISystem> map : sm.getSystemEntries(sType)) {
-                map.getValue().update();
+
+            Set<Map.Entry<Integer, ISystem>> map = sm.getSystemEntries(sType);
+
+            if(map != null) {
+                for(Map.Entry<Integer, ISystem> e : map) {
+                    e.getValue().update();
+                }
             }
         }
-
     }
 }
