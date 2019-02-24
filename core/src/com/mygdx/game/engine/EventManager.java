@@ -54,9 +54,9 @@ public class EventManager {
 
     public void dispatchEvents(){
         for(IEvent event : events){
-            if(event.getID()!=null){
-
-            }
+            //if(event.getID()!=null){
+            //
+            //}
         }
     }
 }

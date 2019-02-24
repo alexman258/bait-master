@@ -1,6 +1,7 @@
 package com.mygdx.game.engine;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import com.mygdx.game.Interface.IEntity;
 import com.mygdx.game.Interface.ISystem;
@@ -10,6 +11,7 @@ public class Engine {
     private static Engine engine;
     private ComponentManager cm;
     private EntityManager em;
+    private SystemManager sm;
 
     private String[] systemUpdateOrder;
     private ArrayList<Integer> flaggedForRemoval;
@@ -18,6 +20,7 @@ public class Engine {
         this.systemUpdateOrder = systemUpdateOrder;
         cm = ComponentManager.getInstance();
         em = EntityManager.getInstance();
+        sm = SystemManager.getInstance();
         flaggedForRemoval = new ArrayList<Integer>();
     }
 
@@ -36,16 +39,24 @@ public class Engine {
     }
 
     public ComponentManager getComponentManager() {
+
         return cm;
     }
 
     public EntityManager getEntityManager() {
+
         return em;
     }
 
-    public String[] getOrderedSystemTypes(){return systemUpdateOrder;}
+    public String[] getOrderedSystemTypes(){
 
-    public int acquireEntityID(){return em.acquireEntityId();}
+        return systemUpdateOrder;
+    }
+
+    public int acquireEntityID(){
+
+        return em.acquireEntityId();
+    }
 
     public void addEntity(IEntity e, ArrayList<IComponent> cl, ArrayList<ISystem> sl){
         em.addEntity(e);
@@ -53,24 +64,27 @@ public class Engine {
             cm.addComponent(c);
         }
         for(ISystem s : sl){
-            // Add system manager here
-            //sm.addSystem(s);
+            sm.addSystem(s);
         }
     }
 
     //TODO: Finish this function
     public void removeEntity(int id){
         em.removeEntity(id);
-        //cm.removeComponent(id);
+        cm.removeComponents(id);
     }
 
-    public void flagEntityForRemoval(int id){flaggedForRemoval.add(id);}
+    public void flagEntityForRemoval(int id){
+
+        flaggedForRemoval.add(id);
+    }
 
     public void update(){
+
         for(String sType : systemUpdateOrder){
-          //  if(null != com.mygdx.game.systems){
-            //    for
-            //}
+            for(Map.Entry<Integer, ISystem> map : sm.getSystemEntries(sType)) {
+                map.getValue().update();
+            }
         }
     }
 }

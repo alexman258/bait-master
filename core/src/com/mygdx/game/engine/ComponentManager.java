@@ -56,7 +56,6 @@ public class ComponentManager {
         }
     }
 
-
     public void removeComponent(int id, String type) {
             componentIds.get(id).remove(type);
             componentTypes.get(type).remove(id);
@@ -73,15 +72,16 @@ public class ComponentManager {
     }
 
     //Getters for a hashmap of all the entities
-    public HashMap<String, IComponent> getComponents(int id){
+    public HashMap<String, IComponent> getComponents(int id) {
+
         return componentIds.get(id);
     }
 
-    public HashMap<Integer, IComponent> getComponents(String type){
+    public HashMap<Integer, IComponent> getComponents(String type) {
         return componentTypes.get(type);
     }
 
-    public IComponent getComponent(int id, String type){
+    public IComponent getComponent(int id, String type) {
         return componentIds.get(id).get(type);
     }
 }
