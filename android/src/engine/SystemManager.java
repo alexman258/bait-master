@@ -2,6 +2,7 @@ package engine;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import Interface.ISystem;
 
@@ -45,22 +46,15 @@ public class SystemManager {
 
         HashMap<String, ISystem> systemToRemove = systemIds.remove(id);
 
+        if(systemToRemove==null){
+            return;
+        }
         for(Map.Entry<String, ISystem> map : systemToRemove.entrySet()) {
-            .get()
+            systemTypes.get(map.getValue().getType()).remove(id);
         }
 
     }
 
-    public void removeSystem(String type) {
-
-        int temp;
-
-        if(systemTypes.containsKey(type)) {
-            temp = systemTypes.get(type).getID();
-            systemTypes.remove(type);
-            removeSystem(temp);
-        }
-    }
 
     public void removeSystem(ISystem system) {
 
@@ -75,8 +69,23 @@ public class SystemManager {
 
     // GETTERS AND SETTERS
 
-    public HashMap<Integer, ISystem> getSystem(int id) {
-        return
+    public HashMap<String, ISystem> getSystem(int id) {
+        return systemIds.get(id);
     }
 
+    public HashMap<Integer, ISystem> getSystem(String type) {
+        return systemTypes.get(type);
+    }
+
+    public Set<Map.Entry<Integer, ISystem>> getSystemEntries(String type){
+        HashMap<Integer,ISystem> pool = systemTypes.get(type);
+        if (pool!=null){
+            return pool.entrySet();
+        }
+        return null;
+    }
+
+    public ISystem getSystem(int id, String type){
+        return systemIds.get(id).get(type);
+    }
 }
