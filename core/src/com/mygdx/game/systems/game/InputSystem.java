@@ -41,6 +41,7 @@ public class InputSystem implements ISystem {
     }
 
     private void justTouched() {
+        /*
         if(Gdx.input.justTouched()) {
             PositionComponent positionComponent = (PositionComponent) componentManager.getComponent(0, "PositionComponent");
 
@@ -52,6 +53,7 @@ public class InputSystem implements ISystem {
             positionComponent.setX(x);
             positionComponent.setY(change - Screen.SCREEN_HEIGHT / 2);
         }
+        */
     }
 
     private void spawnFish() {

@@ -32,7 +32,11 @@ public class UpdateSpriteSystem implements ISystem {
     public void update() {
         SpriteComponent spriteComponent=(SpriteComponent)componentManager.getComponent(id, "SpriteComponent");
         PositionComponent positionComponent =(PositionComponent) componentManager.getComponent(id, "PositionComponent");
-        //SizeComponent sizeComponent=(SizeComponent)componentManager.getComponent(id, "SizeComponent");
+
+        if(componentManager.hasComponent(id, "SizeComponent")) {
+            SizeComponent sizeComponent = (SizeComponent)componentManager.getComponent(id, "SizeComponent");
+            spriteComponent.getSprite().setSize((float) sizeComponent.getWidth(), (float) sizeComponent.getHeight());
+        }
 
         float x = (float) positionComponent.getX();
         float y = (float) positionComponent.getY();

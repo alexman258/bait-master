@@ -7,6 +7,7 @@ public class Player  implements IEntity {
 
     private int id;
     private String type;
+    private boolean isSelected = false;
 
     public Player(int id){
         this.id=id;
@@ -22,6 +23,14 @@ public class Player  implements IEntity {
     @Override
     public String getType() {
         return type;
+    }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelection(boolean isSelected) {
+        this.isSelected = isSelected;
     }
 
 }

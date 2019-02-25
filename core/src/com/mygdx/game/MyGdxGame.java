@@ -19,6 +19,7 @@ import com.mygdx.game.engine.utils.SpecialEntityID;
 import com.mygdx.game.engine.utils.SystemUpdateOrder;
 import com.mygdx.game.entities.Fish;
 import com.mygdx.game.factories.GameEntityFactory;
+import com.mygdx.game.factories.PlayerEntityFactory;
 import com.mygdx.game.systems.UpdateSpriteSystem;
 import com.mygdx.game.systems.game.InputSystem;
 import com.mygdx.game.systems.game.RenderSystem;
@@ -75,16 +76,22 @@ public class MyGdxGame extends ApplicationAdapter {
 
 	private void initEntities() {
 		if(engine != null) {
-			GameEntityFactory gameEntityFactory = new GameEntityFactory(assetManager, batch, SpecialEntityID.BACKGROUND_ENTITY);
+			GameEntityFactory gameEntityFactory = new GameEntityFactory(assetManager, batch);
+			gameEntityFactory.buildEntity();
 			gameEntityFactory.buildComponentList();
 			gameEntityFactory.buildSystemList();
-			gameEntityFactory.buildEntity();
 			engine.addEntity(gameEntityFactory);
+
+			PlayerEntityFactory playerEntityFactory = PlayerEntityFactory.getInstance(assetManager, batch);
+			playerEntityFactory.buildEntity();
+			playerEntityFactory.buildComponentList();
+			playerEntityFactory.buildSystemList();
+			engine.addEntity(playerEntityFactory);
 		}
 	}
 
 	private void loadAssets() {
-
+		assetManager.load("fisherman.png", Texture.class);
 		assetManager.load("shore.png", Texture.class);
 		assetManager.load("fisha.png", Texture.class);
 	}

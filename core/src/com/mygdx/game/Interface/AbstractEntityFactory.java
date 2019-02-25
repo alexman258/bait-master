@@ -9,8 +9,7 @@ public abstract class AbstractEntityFactory {
     protected ArrayList<ISystem> systemList;
     protected IEntity entity;
 
-    public AbstractEntityFactory(int id) {
-        this.id = id;
+    public AbstractEntityFactory() {
         componentList = new ArrayList<IComponent>();
         systemList = new ArrayList<ISystem>();
     }

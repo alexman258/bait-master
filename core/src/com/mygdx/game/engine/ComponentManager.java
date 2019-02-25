@@ -46,7 +46,6 @@ public class ComponentManager {
         }
     }
 
-
     public void removeComponents(int id) {
         HashMap<String, IComponent> flaggedForRemoval = componentIds.remove(id);
         if(flaggedForRemoval==null) {
@@ -70,6 +69,14 @@ public class ComponentManager {
         if(componentTypes.containsKey(component.getType())){
             componentTypes.get(component.getType()).remove(component.getID());
         }
+    }
+
+    public boolean hasComponent(int id, String type) {
+        if(componentIds.containsKey(id)) {
+            return true;
+        }
+
+        return false;
     }
 
     //Getters for a hashmap of all the entities

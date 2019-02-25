@@ -8,7 +8,4 @@ public class SpecialEntityID {
     @Deprecated
     public static int getGameEntityID(){return GAME_ENTITY;}
 
-    @Deprecated
-    public static int getPlayerEntityID(){return PLAYER_ENTITY;}
-
 }

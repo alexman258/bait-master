@@ -35,6 +35,10 @@ public class EntityManager {
         return entityTypePools.get(type);
     }
 
+    public IEntity getEntity(int id) {
+        return entities.get(id);
+    }
+
     /*
     Get the next available id to be used for com.mygdx.game.entities
     */

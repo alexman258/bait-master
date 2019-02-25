@@ -29,14 +29,14 @@ public class GameEntityFactory extends AbstractEntityFactory {
     private AssetManager assetManager;
     private SpriteBatch spriteBatch;
 
-    public GameEntityFactory(AssetManager assetManager, SpriteBatch spriteBatch, int id) {
-        super(id);
+    public GameEntityFactory(AssetManager assetManager, SpriteBatch spriteBatch) {
         this.assetManager = assetManager;
         this.spriteBatch = spriteBatch;
     }
 
     @Override
     public void buildEntity() {
+
         entity = new GameEntity(SpecialEntityID.BACKGROUND_ENTITY);
     }
 
